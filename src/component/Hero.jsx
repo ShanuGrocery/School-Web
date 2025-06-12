@@ -1,16 +1,16 @@
-// src/components/Hero.js
-import React, { useEffect, useState } from 'react';
-import bgImg from '../assets/bgImg.jpg';
-import bgImg2 from '../assets/bgImg2.jpg';
-import bgImg3 from '../assets/bgImg3.jpg';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import bgImg from "../assets/hero.png";
+import bgImg2 from "../assets/hero2.png";
+import bgImg3 from "../assets/anualath.png";
 
 const images = [bgImg, bgImg2, bgImg3];
-const quotes = [
-  '"I believe, I become"',
-  '"Empowering minds for a brighter future"',
-  '"Nurturing excellence every day"',
+const prompts = [
+  " Unlock the power of knowledge – your future begins here.",
+  "Launch your dreams with quality education.",
+  "Education is the passport to tomorrow – prepare today.",
+  "Learning today, leading tomorrow.",
 ];
-
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,7 +18,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -32,18 +32,19 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
-        <div className="text-white space-y-5 max-w-3xl">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
-  Shanti Hari Sudhanya Chand
-</h1>
-
-
-         <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-lime-200">
-  {quotes[currentIndex]}
-</p>
-
-
-
+        <div className="space-y-6 max-w-4xl">
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={prompts[currentIndex]}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-playfair bg-gradient-to-r from-white via-purple-400 to-white text-transparent bg-clip-text"
+            >
+              {prompts[currentIndex]}
+            </motion.p>
+          </AnimatePresence>
 
           <a
             href="#"

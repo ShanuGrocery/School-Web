@@ -1,6 +1,6 @@
 // src/components/AboutUs.jsx
 import React from 'react';
-import bgImg3 from '../assets/bgImg3.jpg';
+import bgImg3 from '../assets/bg3.jpeg';
 
 const AboutUs = () => {
   return (
@@ -8,9 +8,9 @@ const AboutUs = () => {
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Text Section */}
         <div data-aos="fade-right" className="order-1 md:order-none">
-          <h2 className="text-4xl font-semibold text-blue-900 mb-4">About Us</h2>
+          <h2 className="text-4xl font-semibold text-blue-900 mb-4 font-playfair">About Us</h2>
           <div className="w-16 h-1 bg-lime-500 mb-6"></div>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="text-gray-700 leading-relaxed text-lg font-playfair">
             Shanti Hari Sudhanya Chand Public School is a CBSE-affiliated institution that fosters a progressive
             environment for over 1000+ students. Our six-acre campus in Bettiah offers a safe and student-friendly
             atmosphere with high academic standards and global educational exposure. We focus on holistic development
@@ -19,11 +19,11 @@ const AboutUs = () => {
         </div>
 
         {/* Image Section */}
-        <div data-aos="fade-left" className="order-2 md:order-none">
+        <div data-aos="fade-left" className="order-2 md:order-none flex justify-center">
           <img
             src={bgImg3}
             alt="About School"
-            className="rounded-lg shadow-md w-full object-cover"
+            className="rounded-lg shadow-md w-full max-w-md lg:max-w-lg object-cover"
           />
         </div>
       </div>
