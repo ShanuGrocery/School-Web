@@ -13,9 +13,8 @@ const Navbar = () => {
     'About Us',
     'Admission',
     'Academics',
-    'Beyond Academics',
+    'Infrastructure',
     'Contacts',
-    'ERP & Fee',
   ];
 
   return (
@@ -26,7 +25,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-2">
             <img src={schoolLogo} alt="Logo" className="h-16 md:h-20" />
             <div className="text-lg md:text-2xl font-semibold text-blue-800 leading-tight font-playfair">
-              Shanti Hari Sudhanya Chand <br />
+              Shanti <span className='text-black'>Hari Sudhanya</span> Chand <br />
               <span className="text-lg text-gray-600 font-playfair">Public School</span>
             </div>
           </div>

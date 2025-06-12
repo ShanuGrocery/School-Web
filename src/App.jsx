@@ -6,6 +6,8 @@ import AboutUs from './component/AboutUs';
 import Footer from './component/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import EducationalOffers from './component/EducationalOffers';
+import Principalmessage from './component/Principalmessage';
 
 
 
@@ -20,7 +22,9 @@ function App() {
     <div>
       <Navbar />
       <Hero />
-      <AboutUs />
+      <EducationalOffers/>
+      <AboutUs/>
+      <Principalmessage/>
       <Footer/>
     </div>
   );

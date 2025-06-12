@@ -40,7 +40,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-playfair bg-gradient-to-r from-white via-purple-400 to-white text-transparent bg-clip-text"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-playfair bg-gradient-to-r text-white text-transparent bg-clip-text"
             >
               {prompts[currentIndex]}
             </motion.p>
