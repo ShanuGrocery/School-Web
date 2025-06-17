@@ -12,7 +12,7 @@ const principalData = {
     "Discipline and dedication are the pillars of success.",
     "We don't just teach — we inspire, guide, and lead.",
     "Every child is a spark of brilliance waiting to be ignited.",
-    "Our classrooms are not limited to four walls — they extend into life itself.",
+    "Our classrooms are not limited to four walls — they extend into life itself and.",
   ],
 };
 

@@ -8,6 +8,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import EducationalOffers from './component/EducationalOffers';
 import Principalmessage from './component/Principalmessage';
+import Testimonials from './component/Testimonials';
+import AcademicSections from './component/AcademicSections';
+import RecentActivities from './component/RecentActivities';
+// import RecentActivities from './component/RecentActivities';
 
 
 
@@ -25,6 +29,10 @@ function App() {
       <EducationalOffers/>
       <AboutUs/>
       <Principalmessage/>
+      {/* <RecentActivities/> */}
+      <Testimonials/>
+      <AcademicSections/>
+      <RecentActivities/>
       <Footer/>
     </div>
   );

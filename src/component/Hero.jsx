@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import bgImg from "../assets/hero.png";
-import bgImg2 from "../assets/hero2.png";
-import bgImg3 from "../assets/anualath.png";
+import bgImg from "../assets/bg3.jpeg";
+import bgImg2 from "../assets/bg4.jpeg";
+import bgImg3 from "../assets/bg7.jpeg";
 
 const images = [bgImg, bgImg2, bgImg3];
 const prompts = [
@@ -23,14 +23,18 @@ const Hero = () => {
   }, []);
 
   return (
-    <section
-      className="relative w-full h-[85vh] sm:h-[90vh] bg-cover bg-center transition-all duration-1000"
-      style={{
-        backgroundImage: `url(${images[currentIndex]})`,
-      }}
-    >
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <section className="relative w-full h-[85vh] sm:h-[90vh] overflow-hidden">
+      {/* Full-width and full-height image with object-cover */}
+      <img
+        src={images[currentIndex]}
+        alt="Hero Background"
+        className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
+      />
 
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      {/* Text content */}
       <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
         <div className="space-y-6 max-w-4xl">
           <AnimatePresence mode="wait">
@@ -40,7 +44,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-playfair bg-gradient-to-r text-white text-transparent bg-clip-text"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-playfair text-white"
             >
               {prompts[currentIndex]}
             </motion.p>
