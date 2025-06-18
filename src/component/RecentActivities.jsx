@@ -71,8 +71,9 @@ const RecentActivities = () => {
               key={index}
               className="relative group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:scale-[1.02] hover:shadow-2xl transition duration-300"
             >
+              {/* Rotating Icon 360° */}
               <div
-                className={`w-14 h-14 flex items-center justify-center rounded-full text-white text-2xl shadow-lg absolute -top-6 left-6 ${activity.color}`}
+                className={`w-14 h-14 flex items-center justify-center rounded-full text-white text-2xl shadow-lg absolute -top-6 left-6 ${activity.color} transition-transform duration-500 group-hover:[transform:rotate(360deg)]`}
               >
                 {activity.icon}
               </div>
