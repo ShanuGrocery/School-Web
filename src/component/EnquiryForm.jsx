@@ -25,7 +25,7 @@ const EnquiryForm = () => {
     const { name, phone, email, message } = formData;
 
     const whatsappMessage = `Hello,%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email || 'N/A'}%0A*Message:* ${message}`;
-    const whatsappURL = `https://wa.me/919876543210?text=${whatsappMessage}`;
+    const whatsappURL = `https://wa.me/919523464653?text=${whatsappMessage}`;
 
     window.open(whatsappURL, "_blank");
   };
@@ -48,15 +48,14 @@ const EnquiryForm = () => {
           viewport={{ once: true }}
           className="hidden md:flex flex-col items-center text-left"
         >
-         <img
-  src={image1}
-  alt="Enquiry Illustration"
-  className="w-full max-w-xl w-[32rem] mb-6"
-/>
-
+          <img
+            src={image1}
+            alt="Enquiry Illustration"
+            className="w-full max-w-lg w-[26rem] mb-6"
+          />
           <ul className="space-y-2 text-gray-700 text-sm">
             <li className="flex items-center gap-2">
-              <FaPhoneAlt className="text-purple-600" /> +91 9523464653
+              <FaPhoneAlt className="text-purple-600" />
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope className="text-purple-600" /> info@yourschool.com
