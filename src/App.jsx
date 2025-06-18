@@ -11,6 +11,8 @@ import Principalmessage from './component/Principalmessage';
 import Testimonials from './component/Testimonials';
 import AcademicSections from './component/AcademicSections';
 import RecentActivities from './component/RecentActivities';
+import MeetOurToppers from './component/MeetOurToppers';
+import EnquiryForm from './component/EnquiryForm';
 // import RecentActivities from './component/RecentActivities';
 
 
@@ -30,9 +32,11 @@ function App() {
       <AboutUs/>
       <Principalmessage/>
       {/* <RecentActivities/> */}
-      <Testimonials/>
       <AcademicSections/>
       <RecentActivities/>
+      <MeetOurToppers/>
+      <EnquiryForm/>
+      <Testimonials/>
       <Footer/>
     </div>
   );

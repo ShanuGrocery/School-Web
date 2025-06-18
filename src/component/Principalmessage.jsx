@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import image from "../assets/principal.png";
+import image from "../assets/principalsch.jpeg";
 
 const principalData = {
   name: "Mr. Rajesh Kumar",
@@ -20,25 +20,13 @@ const PrincipalMessage = () => {
   return (
     <section className="bg-gray-50 py-16 px-6 md:px-20 font-playfair">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Image Section */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <img
-            src={principalData.image}
-            alt={principalData.name}
-            className="rounded-2xl shadow-lg w-full max-w-sm mx-auto md:mx-0"
-          />
-        </motion.div>
-
-        {/* Text Section */}
+        
+        {/* Text Section - Shows first on mobile */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-6"
+          className="order-1 md:order-none space-y-6"
         >
           <h2 className="text-4xl font-bold text-purple-800">
             Principal's Message
@@ -48,7 +36,6 @@ const PrincipalMessage = () => {
             {principalData.message}
           </p>
 
-          {/* Prompts/Quotes */}
           <div className="space-y-2">
             {principalData.prompts.map((quote, idx) => (
               <blockquote
@@ -60,13 +47,26 @@ const PrincipalMessage = () => {
             ))}
           </div>
 
-          {/* Signature */}
           <div className="pt-4">
             <h4 className="text-base font-semibold text-gray-800">
               {principalData.name}
             </h4>
             <p className="text-sm text-purple-600">{principalData.position}</p>
           </div>
+        </motion.div>
+
+        {/* Image Section - Shows after text on mobile */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="order-2 md:order-none"
+        >
+          <img
+            src={principalData.image}
+            alt={principalData.name}
+            className="rounded-2xl shadow-lg w-full max-w-sm mx-auto md:mx-0"
+          />
         </motion.div>
       </div>
     </section>
