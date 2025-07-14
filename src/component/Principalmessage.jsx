@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import image from "../assets/principalsch.jpeg";
+import image from "../assets/principal.png";
 
 const principalData = {
-  name: "Mr. Rajesh Kumar",
+  name: "Mr. Sammer Rai",
   position: "Principal",
   image: image,
   message:
@@ -18,15 +18,15 @@ const principalData = {
 
 const PrincipalMessage = () => {
   return (
-    <section className="bg-gray-50 py-16 px-6 md:px-20 font-playfair">
+    <section className="bg-white py-16 px-6 md:px-20 font-playfair">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* Text Section - Shows first on mobile */}
+
+        {/* Text Section - On top in mobile, right side on desktop */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="order-1 md:order-none space-y-6"
+          className="order-1 md:order-2 space-y-6"
         >
           <h2 className="text-4xl font-bold text-purple-800">
             Principal's Message
@@ -55,12 +55,12 @@ const PrincipalMessage = () => {
           </div>
         </motion.div>
 
-        {/* Image Section - Shows after text on mobile */}
+        {/* Image Section - On bottom in mobile, left side on desktop */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="order-2 md:order-none"
+          className="order-2 md:order-1"
         >
           <img
             src={principalData.image}

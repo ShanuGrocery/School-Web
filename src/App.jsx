@@ -13,6 +13,7 @@ import AcademicSections from './component/AcademicSections';
 import RecentActivities from './component/RecentActivities';
 import MeetOurToppers from './component/MeetOurToppers';
 import EnquiryForm from './component/EnquiryForm';
+import Events from './component/Events/Events';
 // import RecentActivities from './component/RecentActivities';
 
 
@@ -33,6 +34,7 @@ function App() {
       <Principalmessage/>
       {/* <RecentActivities/> */}
       <AcademicSections/>
+      <Events/>
       <RecentActivities/>
       <MeetOurToppers/>
       <EnquiryForm/>

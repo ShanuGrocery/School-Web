@@ -55,7 +55,7 @@ const EnquiryForm = () => {
           />
           <ul className="space-y-2 text-gray-700 text-sm">
             <li className="flex items-center gap-2">
-              <FaPhoneAlt className="text-purple-600" />
+              <FaPhoneAlt className="text-purple-600" />7352205506
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope className="text-purple-600" /> info@yourschool.com
@@ -124,7 +124,7 @@ const EnquiryForm = () => {
 
           <button
             type="submit"
-            className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition duration-300"
+            className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-300"
           >
             Submit Enquiry
           </button>

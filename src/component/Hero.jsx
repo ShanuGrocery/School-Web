@@ -52,7 +52,7 @@ const Hero = () => {
 
           <a
             href="#"
-            className="inline-block bg-blue-600 text-white text-sm sm:text-base px-5 py-2 sm:px-6 sm:py-2.5 rounded-md hover:bg-blue-700 transition"
+            className="inline-block bg-purple-600 text-white text-sm sm:text-base px-5 py-2 sm:px-6 sm:py-2.5 rounded-md hover:bg-blue-700 transition hover:bg-green-600"
           >
             Enquire Now
           </a>

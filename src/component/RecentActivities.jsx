@@ -48,6 +48,14 @@ const activities = [
     date: "2025-06-05",
     color: "bg-green-500",
   },
+  {
+    icon: <FaGlobeAsia />,
+    title: "World Environment Day",
+    description:
+      "Students participated in tree plantation drives and environmental awareness rallies.",
+    date: "2025-06-05",
+    color: "bg-green-500",
+  },
 ];
 
 const formatDate = (dateStr) =>

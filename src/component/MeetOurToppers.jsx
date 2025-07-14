@@ -5,13 +5,16 @@ import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
+import image1 from "../assets/sip1.png"
+import image2 from "../assets/sip2.png"
+import image3 from "../assets/sip3.png"
+import image4 from "../assets/sip4.png"
 
 const MeetOurToppers = () => {
   const [toppers, setToppers] = useState([]);
   const [selectedTopper, setSelectedTopper] = useState(null);
 
   useEffect(() => {
-    // Simulated async fetch
     const fetchToppers = async () => {
       const data = [
         {
@@ -21,7 +24,7 @@ const MeetOurToppers = () => {
           rank: "1st Rank",
           subject: "Science",
           marks: "98.7%",
-          image: "/images/topper1.jpg",
+          image: image1,
         },
         {
           id: 2,
@@ -30,7 +33,7 @@ const MeetOurToppers = () => {
           rank: "1st Rank",
           subject: "Mathematics",
           marks: "97.3%",
-          image: "/images/topper2.jpg",
+          image: image2,
         },
         {
           id: 3,
@@ -39,7 +42,7 @@ const MeetOurToppers = () => {
           rank: "2nd Rank",
           subject: "English",
           marks: "95.4%",
-          image: "/images/topper3.jpg",
+          image: image3,
         },
         {
           id: 4,
@@ -48,7 +51,7 @@ const MeetOurToppers = () => {
           rank: "3rd Rank",
           subject: "Social Studies",
           marks: "94.6%",
-          image: "/images/topper4.jpg",
+          image: image4,
         },
       ];
       setToppers(data);
@@ -70,12 +73,13 @@ const MeetOurToppers = () => {
           slidesPerView={1}
           loop
           autoplay={{ delay: 3000 }}
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, el: ".custom-swiper-pagination" }}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
+          className="relative"
         >
           {toppers.map((topper, index) => (
             <SwiperSlide key={topper.id}>
@@ -111,6 +115,9 @@ const MeetOurToppers = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Pagination Dots Below Swiper */}
+        <div className="custom-swiper-pagination mt-6 flex justify-center"></div>
 
         <div className="mt-10">
           <a

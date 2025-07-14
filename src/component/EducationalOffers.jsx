@@ -58,7 +58,7 @@ const EducationalOffers = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-2 text-black">
+          <h2 className="text-3xl font-bold mb-2 text-purple-700">
             What we<br />offer for you
           </h2>
           <p className="text-gray-500 text-sm leading-relaxed">
@@ -81,10 +81,10 @@ const EducationalOffers = () => {
               viewport={{ once: true }}
             >
               <div className="mb-4">
-                <IconComponent className="text-3xl text-black" />
+                <IconComponent className="text-3xl text-purple-500" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-black">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-purple-600">{title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed hover:text-purple-600">{description}</p>
             </motion.div>
           );
         })}

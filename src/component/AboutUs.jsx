@@ -8,11 +8,11 @@ const AboutUs = () => {
         {/* Text Section */}
         <div data-aos="fade-right" className="order-1 md:order-none">
           <h2 className="text-4xl font-semibold text-blue-900 dark:text-white mb-4 font-playfair">
-            About Us
+            About St.Michal 
           </h2>
           <div className="w-16 h-1 bg-lime-500 mb-6"></div>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg font-playfair">
-            Shanti Hari Sudhanya Chand Public School is a CBSE-affiliated institution that fosters a progressive
+           At,  <span className='text-purple-700'>St.Michal Public School</span> is a CBSE-affiliated institution that fosters a progressive
             environment for over 1000+ students. Our six-acre campus in Bettiah offers a safe and student-friendly
             atmosphere with high academic standards and global educational exposure. We focus on holistic development
             through academics, extracurriculars, and character building.
