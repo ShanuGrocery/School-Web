@@ -8,11 +8,11 @@ import {
 } from 'react-icons/fa';
 
 const contactInfo = [
-  { icon: '📞', value: '+91 0000000000, +91 0000000001' },
-  { icon: '✉️', value: 'info@ShantiHariSudhanyaChand.com' },
+  { icon: '📞', value: '+91 77396 92245' },
+  { icon: '✉️', value: 'sauhardhinternationalschool7739@gmail.com' },
   {
     icon: '📍',
-    value: 'Belbagh Bangali Colony, Bettiah,\nWest Champaran, Bihar – 845438',
+    value: 'Belaspur, Harinagar,\nWest Champaran, Bihar – 845103',
   },
 ];
 
@@ -21,9 +21,6 @@ const quickLinks = [
   { label: 'About Us', href: '#' },
   { label: 'Admission', href: '#' },
   { label: 'Academics', href: '#' },
-  { label: 'Beyond Academics', href: '#' },
-  { label: 'Contacts', href: '#' },
-  { label: 'ERP & Fee', href: '#' },
 ];
 
 const socialLinks = [
@@ -50,7 +47,7 @@ const Footer = () => {
             onClick={() => toggleSection('info')}
             className="text-2xl font-bold mb-4 flex justify-between items-center cursor-pointer md:cursor-default"
           >
-            Shanti Hari Sudhanya Chand<br />Public School
+            Sauhardh international school
             <span className="md:hidden text-sm ml-2">
               {activeSection === 'info' ? <FaChevronUp /> : <FaChevronDown />}
             </span>
@@ -58,7 +55,6 @@ const Footer = () => {
           <div className={`md:block ${activeSection === 'info' ? 'block' : 'hidden'}`}>
             <p className="text-sm text-purple-100 leading-relaxed">
               Curriculum: <span className="text-white">CBSE, New Delhi</span><br />
-              Co-Education with <span className="text-white">A/C Hostel Facility</span>
             </p>
           </div>
         </div>
@@ -164,7 +160,7 @@ const Footer = () => {
       {/* Divider and Copyright */}
       <hr className="my-8 border-purple-300" />
       <p className="text-center text-xs text-purple-200">
-        &copy; {new Date().getFullYear()} Shanti Hari Sudhanya Chand Public School. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Sauhardh International  School. All Rights Reserved.
       </p>
     </footer>
   );

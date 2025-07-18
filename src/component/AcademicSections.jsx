@@ -1,98 +1,164 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaBaby, FaBookOpen, FaGraduationCap } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaBullseye,
+  FaBaby,
+  FaBook,
+  FaBrain,
+  FaGraduationCap,
+} from "react-icons/fa";
+import preprimaryImg from "../assets/sunny4.jpeg";
+import primaryImg from "../assets/sunny5.jpeg";
+import secondaryImg from "../assets/sunny6.jpeg";
+import seniorSecondaryImg from "../assets/school5.jpeg";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Import images
-import prePrimaryImg from "../assets/sip1.png";
-import primaryImg from "../assets/sip2.png";
-import secondaryImg from "../assets/sip3.png";
-
-const sections = [
+const sectionData = [
   {
-    title: "Pre-Primary",
-    icon: <FaBaby className="text-pink-500 dark:text-pink-300 text-4xl mb-2" />,
-    image: prePrimaryImg,
-    color: "from-pink-100 to-pink-50 dark:from-pink-900 dark:to-pink-800",
+    key: "Preprimary",
+    title: "Preprimary",
+    icon: <FaBaby size={24} />,
+    image: preprimaryImg,
+    description:
+      "The Preprimary Section focuses on early childhood education and lays the foundation for lifelong learning through play, exploration, and social interaction.",
     prompts: [
-      "Learning through play and activities",
-      "Motor skills and emotional development",
-      "Foundations in language and numbers",
+      "Learning through play",
+      "Safe and friendly environment",
+      "Development of motor & social skills",
+      "Colorful classrooms with learning toys",
     ],
+    bg: "bg-gradient-to-tr from-pink-100 via-pink-50 to-white",
+    reverse: false,
   },
   {
+    key: "Primary",
     title: "Primary",
-    icon: <FaBookOpen className="text-blue-500 dark:text-blue-300 text-4xl mb-2" />,
+    icon: <FaBook size={24} />,
     image: primaryImg,
-    color: "from-blue-100 to-blue-50 dark:from-blue-900 dark:to-blue-800",
+    description:
+      "The Primary Section emphasizes basic literacy, numeracy, and personal development, fostering curiosity and creativity in young learners.",
     prompts: [
-      "Interactive classrooms and basic subjects",
-      "Exploration through curiosity-driven tasks",
-      "Focus on reading, writing, math & environment",
+      "Strong foundation in core subjects",
+      "Activity-based learning",
+      "Development of curiosity",
+      "Interactive smart classrooms",
     ],
+    bg: "bg-gradient-to-tr from-yellow-100 via-orange-50 to-white",
+    reverse: true,
   },
   {
+    key: "Secondary",
     title: "Secondary",
-    icon: <FaGraduationCap className="text-purple-500 dark:text-purple-300 text-4xl mb-2" />,
+    icon: <FaBrain size={24} />,
     image: secondaryImg,
-    color: "from-purple-100 to-purple-50 dark:from-purple-900 dark:to-purple-800",
+    description:
+      "The Secondary Section prepares students for higher education and the future by encouraging critical thinking, problem-solving, and deeper subject understanding.",
     prompts: [
-      "Subject specialization begins",
-      "Project-based and exam-oriented learning",
-      "Focus on analytical thinking and collaboration",
+      "Advanced subject learning",
+      "Science & computer labs",
+      "Critical thinking focus",
+      "Leadership opportunities",
     ],
+    bg: "bg-gradient-to-tr from-slate-100 via-gray-50 to-white",
+    reverse: false,
+  },
+  {
+    key: "Senior Secondary",
+    title: "Senior Secondary",
+    icon: <FaGraduationCap size={24} />,
+    image: seniorSecondaryImg,
+    description:
+      "The Senior Secondary Section provides specialized subject knowledge, career readiness, and preparation for competitive examinations and higher studies.",
+    prompts: [
+      "Career-oriented curriculum",
+      "Competitive exam training",
+      "Expert faculty guidance",
+    ],
+    bg: "bg-gradient-to-tr from-indigo-100 via-purple-50 to-white",
+    reverse: true,
   },
 ];
 
 const AcademicSections = () => {
-  return (
-    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-14 bg-gradient-to-r from-purple-600 via-pink-500 to-red-400 bg-clip-text text-transparent"
-        >
-          🎓 Our Academic Divisions
-        </motion.h2>
+  const [activeTab, setActiveTab] = useState(sectionData[0].key);
+  const activeSection = sectionData.find((section) => section.key === activeTab);
 
-        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-3">
-          {sections.map((section, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className={`group bg-gradient-to-br ${section.color} p-6 rounded-3xl shadow-xl hover:shadow-2xl dark:shadow-md transform transition-transform hover:-translate-y-2`}
+  return (
+    <div className="w-full px-4 sm:px-6 lg:px-10 py-12 bg-white dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl font-bold text-orange-600 font-playfair">
+            Our School Sections
+          </h1>
+          <p className="text-gray-600 mt-3 text-lg sm:text-xl font-playfair">
+            Discover the educational journey at every stage of development
+          </p>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {sectionData.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`px-6 py-3 rounded-xl shadow-md border border-orange-300 font-medium flex items-center gap-2 transition-all duration-300 ${
+                activeTab === tab.key
+                  ? "bg-orange-500 text-white scale-105 shadow-xl"
+                  : "bg-white text-gray-800 hover:bg-orange-100 hover:text-orange-600"
+              }`}
             >
-              <div className="flex flex-col items-center">
-                <div className="relative w-28 h-28 mb-3">
-                  <img
-                    src={section.image}
-                    alt={section.title}
-                    className="w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-lg transition duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute -bottom-2 right-0 bg-white dark:bg-gray-800 p-1 rounded-full shadow-sm">
-                    {section.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">
-                  {section.title}
-                </h3>
-              </div>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-left text-sm leading-relaxed">
-                {section.prompts.map((prompt, idx) => (
-                  <li key={idx} className="transition-all duration-300 group-hover:translate-x-1">
-                    {prompt}
+              {tab.icon}
+              {tab.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Content Card */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSection.key}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.5 }}
+            className={`flex flex-col ${
+              activeSection.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+            } items-center gap-10 p-6 sm:p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-md bg-white/70 dark:bg-white/10 ${activeSection.bg}`}
+          >
+            {/* Image */}
+            <div className="w-full lg:w-1/2">
+              <img
+                src={activeSection.image}
+                alt={activeSection.title}
+                className="w-full h-full max-h-[340px] rounded-2xl border-4 border-orange-300 object-cover shadow-lg hover:scale-105 transition duration-300"
+              />
+            </div>
+
+            {/* Text */}
+            <div className="w-full lg:w-1/2 text-center lg:text-left space-y-5">
+              <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 flex items-center justify-center lg:justify-start gap-3">
+                {activeSection.icon}
+                {activeSection.title} Section
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                {activeSection.description}
+              </p>
+              <ul className="mt-4 space-y-3 text-base text-gray-800">
+                {activeSection.prompts.map((point, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 hover:translate-x-1 transition duration-200"
+                  >
+                    <FaBullseye className="text-orange-500 mt-1" />
+                    <span>{point}</span>
                   </li>
                 ))}
               </ul>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </section>
+    </div>
   );
 };
 

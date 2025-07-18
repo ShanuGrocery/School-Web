@@ -12,15 +12,15 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 z-50">
-      <nav className="bg-gradient-to-r from-purple-200 via-purple-300 to-purple-400 shadow-md">
+      <nav className="bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img src={schoolLogo} alt="Logo" className="h-16 md:h-20" />
-            <div className="text-lg md:text-2xl font-semibold text-blue-800 leading-tight font-playfair">
-              St <span className="text-black">Michal</span> Public School
-              <span className="text-lg text-gray-600 font-playfair"><br />
-                Making Narkatiagang literate
+            <div className="text-lg md:text-2xl font-semibold text-orange-500 leading-tight font-playfair">
+              Sauhardh <span className="text-black">international</span> School
+              <span className="text-lg text-gray-700 font-playfair"><br />
+                Making Harinagar literate
               </span>
             </div>
           </div>

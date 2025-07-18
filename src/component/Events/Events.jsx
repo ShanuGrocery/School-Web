@@ -1,26 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
-import image1 from "../../assets/anualath.png";
-import image2 from "../../assets/hero.png";
+import image1 from "../../assets/anual6.jpeg";
+import image2 from "../../assets/wha3.jpeg";
+import image3 from "../../assets/price.png";
+
 
 const events = [
   {
-    name: "Annual Sports Day",
+    name: "Annual Function",
     image: image1,
     details:
-      "A day filled with exciting sports competitions, team spirit, and fun activities for students.",
+      "Celebrating talent, culture, and achievements every year.",
   },
   {
-    name: "Cultural Fest",
+    name: "Annual Athletics",
     image: image2,
     details:
-      "A vibrant celebration of music, dance, and drama reflecting diverse cultures and talents.",
+      "Run with heart, race with pride ,Victory is where effort and spirit collide.",
   },
   {
-    name: "Art & Craft Fair",
-    image: image1,
+    name: "Spreading Prize",
+    image: image3,
     details:
-      "Creative art and craftwork made by students displayed for parents and visitors.",
+      "Honoring effort, cheering success, Each prize tells a story of progress.",
   },
 ];
 
@@ -28,8 +30,8 @@ const Events = () => {
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-extrabold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500">
-          📅 Our School Events
+        <h2 className="text-3xl sm:text-4xl font-extrabold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-500">
+           Our School Events
         </h2>
 
         <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -54,7 +56,7 @@ const Events = () => {
                 </h3>
               </div>
               <div className="p-6 text-left">
-                <p className="text-purple-600 dark:text-gray-300 text-sm leading-relaxed">
+                <p className="text-purple-600 dark:text-gray-300 text-sm font-semibold leading-relaxed">
                   {event.details}
                 </p>
               </div>

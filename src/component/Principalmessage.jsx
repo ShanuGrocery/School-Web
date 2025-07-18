@@ -3,16 +3,15 @@ import { motion } from "framer-motion";
 import image from "../assets/principal.png";
 
 const principalData = {
-  name: "Mr. Sammer Rai",
+  name: "Mr. Sameer Rai",
   position: "Principal",
   image: image,
   message:
-    "Welcome to our institution where excellence is a tradition. Our goal is to provide holistic education and nurture every student's potential. We believe in empowering young minds through knowledge, discipline, and values.",
+    "Dear Students, Parents, and esteemed members of the School Community, At Sauhardh International School we believe that true education nurtures both the mind and the character. Our goal is to create an environment where students grow intellectually, emotionally and ethically. We are proud of our dedicated teachers who guide each child with care and commitment and are also grateful to parents for their unwavering support. Together, let us continue to inspire, innovate, and ignite a lifelong love for learning .",    
   prompts: [
     "Discipline and dedication are the pillars of success.",
     "We don't just teach — we inspire, guide, and lead.",
-    "Every child is a spark of brilliance waiting to be ignited.",
-    "Our classrooms are not limited to four walls — they extend into life itself and.",
+    
   ],
 };
 
@@ -28,11 +27,14 @@ const PrincipalMessage = () => {
           transition={{ duration: 0.6 }}
           className="order-1 md:order-2 space-y-6"
         >
-          <h2 className="text-4xl font-bold text-purple-800">
+          <h2 className="text-4xl font-bold text-blue-900">
             Principal's Message
           </h2>
+          <h2 className="text-3xl md:text-3xl font-bold text-orange-500">
+            Learning Today, Leading Tomorrow
+          </h2>
 
-          <p className="text-base text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed">
             {principalData.message}
           </p>
 
@@ -40,7 +42,7 @@ const PrincipalMessage = () => {
             {principalData.prompts.map((quote, idx) => (
               <blockquote
                 key={idx}
-                className="text-sm italic text-purple-700 border-l-4 border-purple-300 pl-4"
+                className="text-sm italic text-blue-900 border-l-4 border-purple-300 pl-4"
               >
                 “{quote}”
               </blockquote>

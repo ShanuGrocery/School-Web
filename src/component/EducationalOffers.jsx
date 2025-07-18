@@ -49,7 +49,7 @@ const fadeUpVariant = {
 
 const EducationalOffers = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 font-playfair">
+    <section className=" max-w-7xl mx-auto px-6 py-12 font-playfair">
       <div className="grid md:grid-cols-4 gap-6 items-start">
         {/* Text Block */}
         <motion.div
@@ -58,7 +58,7 @@ const EducationalOffers = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-2 text-purple-700">
+          <h2 className="text-3xl font-bold mb-2 text-orange-500">
             What we<br />offer for you
           </h2>
           <p className="text-gray-500 text-sm leading-relaxed">
@@ -81,10 +81,10 @@ const EducationalOffers = () => {
               viewport={{ once: true }}
             >
               <div className="mb-4">
-                <IconComponent className="text-3xl text-purple-500" />
+                <IconComponent className="text-3xl text-orange-500 animate-bounce" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-purple-600">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed hover:text-purple-600">{description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-orange-500">{title}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed hover:text-orange-600">{description}</p>
             </motion.div>
           );
         })}

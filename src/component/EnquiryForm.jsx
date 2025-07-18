@@ -33,8 +33,8 @@ const EnquiryForm = () => {
   return (
     <section className="bg-purple-50 py-20 px-4">
       <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 className="text-5xl font-bold text-purple-700 mb-2">Enquire Now</h2>
-        <p className="text-gray-600">
+        <h2 className="text-5xl font-bold text-purple-700 mb-2 font-playfair">Enquire Now</h2>
+        <p className="text-gray-600 font-playfair">
           Have questions? Fill in your details and we’ll get in <span text-purple-700>touch shortly</span>.
         </p>
       </div>
@@ -54,11 +54,11 @@ const EnquiryForm = () => {
             className="w-full max-w-lg w-[26rem] mb-6"
           />
           <ul className="space-y-2 text-gray-700 text-sm">
-            <li className="flex items-center gap-2">
-              <FaPhoneAlt className="text-purple-600" />7352205506
+            <li className="flex items-center gap-2 font-playfair">
+              <FaPhoneAlt className="text-purple-600" />77396 92245
             </li>
-            <li className="flex items-center gap-2">
-              <FaEnvelope className="text-purple-600" /> info@yourschool.com
+            <li className="flex items-center gap-2 font-playfair">
+              <FaEnvelope className="text-purple-600 " /> info@yourschool.com
             </li>
           </ul>
         </motion.div>
@@ -73,7 +73,7 @@ const EnquiryForm = () => {
           className="bg-white p-8 rounded-2xl shadow-lg space-y-6 w-full"
         >
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Full Name</label>
+            <label className="block text-gray-700 font-medium mb-1 font-playfair">Full Name</label>
             <input
               type="text"
               name="name"
@@ -86,7 +86,7 @@ const EnquiryForm = () => {
           </div>
 
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Phone Number</label>
+            <label className="block text-gray-700 font-medium mb-1 font-playfair">Phone Number</label>
             <input
               type="tel"
               name="phone"
@@ -99,7 +99,7 @@ const EnquiryForm = () => {
           </div>
 
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Email Address</label>
+            <label className="block text-gray-700 font-medium mb-1 font-playfair">Email Address</label>
             <input
               type="email"
               name="email"
@@ -111,7 +111,7 @@ const EnquiryForm = () => {
           </div>
 
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Message</label>
+            <label className="block text-gray-700 font-medium mb-1 font-playfair">Message</label>
             <textarea
               name="message"
               rows="3"
@@ -124,7 +124,7 @@ const EnquiryForm = () => {
 
           <button
             type="submit"
-            className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-300"
+            className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-300 font-playfair"
           >
             Submit Enquiry
           </button>

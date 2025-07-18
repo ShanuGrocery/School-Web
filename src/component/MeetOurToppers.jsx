@@ -19,37 +19,33 @@ const MeetOurToppers = () => {
       const data = [
         {
           id: 1,
-          name: "Aarav Sharma",
-          standard: "Class 10",
+          name: "Piyush pandey",
+          standard: "Class 4th",
           rank: "1st Rank",
-          subject: "Science",
           marks: "98.7%",
           image: image1,
         },
         {
           id: 2,
-          name: "Diya Verma",
-          standard: "Class 12",
+          name: "Pulkit Pandey",
+          standard: "Class UKG",
           rank: "1st Rank",
-          subject: "Mathematics",
           marks: "97.3%",
           image: image2,
         },
         {
           id: 3,
-          name: "Kabir Mehta",
-          standard: "Class 8",
+          name: "Law Kumar Gupta",
+          standard: "Class 3rd",
           rank: "2nd Rank",
-          subject: "English",
           marks: "95.4%",
           image: image3,
         },
         {
           id: 4,
-          name: "Anaya Singh",
-          standard: "Class 9",
-          rank: "3rd Rank",
-          subject: "Social Studies",
+          name: "Kush Kumar Gupta",
+          standard: "Class 3rd",
+          rank: "1st Rank",
           marks: "94.6%",
           image: image4,
         },
@@ -62,8 +58,8 @@ const MeetOurToppers = () => {
   return (
     <section className="bg-purple-50 py-16 px-4 relative">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-purple-600 mb-4">Meet Our Toppers</h2>
-        <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-purple-600 mb-4 font-playfair">Meet Our Toppers</h2>
+        <p className="text-gray-600 mb-10 max-w-2xl mx-auto font-playfair">
           Celebrating the hard work, dedication, and excellence of our brilliant students who made us proud!
         </p>
 
@@ -98,17 +94,17 @@ const MeetOurToppers = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">{topper.name}</h3>
-                <p className="text-purple-500 font-medium">{topper.standard}</p>
-                <p className="text-gray-600">{topper.rank}</p>
+                <h3 className="text-xl font-semibold text-gray-800 font-playfair">{topper.name}</h3>
+                <p className="text-purple-500 font-medium font-playfair">{topper.standard}</p>
+                <p className="text-gray-600 font-playfair">{topper.rank}</p>
                 {topper.subject && (
-                  <p className="text-sm text-gray-500">
-                    Subject: <span className="font-medium">{topper.subject}</span>
+                  <p className="text-sm text-gray-500 font-playfair">
+                    Subject: <span className="font-medium font-playfair">{topper.subject}</span>
                   </p>
                 )}
                 {topper.marks && (
-                  <p className="text-sm text-gray-500">
-                    Marks: <span className="font-medium">{topper.marks}</span>
+                  <p className="text-sm text-gray-500 font-playfair">
+                    Marks: <span className="font-medium font-playfair">{topper.marks}</span>
                   </p>
                 )}
               </motion.div>

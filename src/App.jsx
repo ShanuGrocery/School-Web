@@ -14,6 +14,7 @@ import RecentActivities from './component/RecentActivities';
 import MeetOurToppers from './component/MeetOurToppers';
 import EnquiryForm from './component/EnquiryForm';
 import Events from './component/Events/Events';
+import SchoolFAQ from './component/SchoolFAQ';
 // import RecentActivities from './component/RecentActivities';
 
 
@@ -33,12 +34,13 @@ function App() {
       <AboutUs/>
       <Principalmessage/>
       {/* <RecentActivities/> */}
-      <AcademicSections/>
       <Events/>
+      <AcademicSections/>
       <RecentActivities/>
       <MeetOurToppers/>
       <EnquiryForm/>
       <Testimonials/>
+      <SchoolFAQ/>
       <Footer/>
     </div>
   );
