@@ -15,6 +15,8 @@ import MeetOurToppers from './component/MeetOurToppers';
 import EnquiryForm from './component/EnquiryForm';
 import Events from './component/Events/Events';
 import SchoolFAQ from './component/SchoolFAQ';
+import Facilities from './component/Facilities';
+import CoreValues from './component/CoreValues';
 // import RecentActivities from './component/RecentActivities';
 
 
@@ -35,6 +37,8 @@ function App() {
       <Principalmessage/>
       {/* <RecentActivities/> */}
       <Events/>
+      <Facilities/>
+      <CoreValues/>
       <AcademicSections/>
       <RecentActivities/>
       <MeetOurToppers/>
