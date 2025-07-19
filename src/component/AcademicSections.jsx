@@ -9,7 +9,7 @@ import {
 import preprimaryImg from "../assets/sunny4.jpeg";
 import primaryImg from "../assets/sunny5.jpeg";
 import secondaryImg from "../assets/sunny6.jpeg";
-import seniorSecondaryImg from "../assets/school5.jpeg";
+import seniorSecondaryImg from "../assets/comeing.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const sectionData = [
@@ -67,7 +67,7 @@ const sectionData = [
     icon: <FaGraduationCap size={24} />,
     image: seniorSecondaryImg,
     description:
-      "The Senior Secondary Section provides specialized subject knowledge, career readiness, and preparation for competitive examinations and higher studies.",
+      "yet to come.",
     prompts: [
       "Career-oriented curriculum",
       "Competitive exam training",
@@ -103,8 +103,8 @@ const AcademicSections = () => {
               onClick={() => setActiveTab(tab.key)}
               className={`px-6 py-3 rounded-xl shadow-md border border-orange-300 font-medium flex items-center gap-2 transition-all duration-300 ${
                 activeTab === tab.key
-                  ? "bg-orange-500 text-white scale-105 shadow-xl"
-                  : "bg-white text-gray-800 hover:bg-orange-100 hover:text-orange-600"
+                  ? "bg-orange-500 text-white scale-105 shadow-xl font-playfair"
+                  : "bg-white text-gray-800 hover:bg-orange-100 hover:text-orange-600 font-playfair"
               }`}
             >
               {tab.icon}
@@ -136,14 +136,14 @@ const AcademicSections = () => {
 
             {/* Text */}
             <div className="w-full lg:w-1/2 text-center lg:text-left space-y-5">
-              <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 flex items-center justify-center lg:justify-start gap-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 flex items-center justify-center lg:justify-start gap-3 font-playfair">
                 {activeSection.icon}
                 {activeSection.title} Section
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed font-playfair">
                 {activeSection.description}
               </p>
-              <ul className="mt-4 space-y-3 text-base text-gray-800">
+              <ul className="mt-4 space-y-3 text-base text-gray-800 font-playfair">
                 {activeSection.prompts.map((point, index) => (
                   <li
                     key={index}

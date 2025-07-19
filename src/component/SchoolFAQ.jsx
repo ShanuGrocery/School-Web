@@ -68,7 +68,7 @@ const SchoolFAQ = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between text-left"
               >
-                <h3 className="text-lg font-medium text-gray-800 dark:text-white">
+                <h3 className="text-lg font-medium text-gray-800 dark:text-white font-playfair">
                   {faq.question}
                 </h3>
                 <span className="text-purple-600">
@@ -76,7 +76,7 @@ const SchoolFAQ = () => {
                 </span>
               </button>
               {openIndex === index && (
-                <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 font-playfair ">
                   {faq.answer}
                 </p>
               )}

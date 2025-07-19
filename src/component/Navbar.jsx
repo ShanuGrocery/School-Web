@@ -1,7 +1,5 @@
-// src/components/Navbar.js
-
 import React, { useState } from 'react';
-import schoolLogo from '../assets/school_logo.png';
+import schoolLogo from '../assets/newlogo1.png';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import menuItems from '../data/menuData';
 
@@ -9,6 +7,12 @@ const Navbar = () => {
   const [active, setActive] = useState('Home');
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null); // For mobile
+
+  const handleLinkClick = (title) => {
+    setActive(title);
+    setMenuOpen(false);
+    setOpenSubmenu(null);
+  };
 
   return (
     <div className="sticky top-0 z-50">
@@ -18,9 +22,9 @@ const Navbar = () => {
           <div className="flex items-center space-x-2">
             <img src={schoolLogo} alt="Logo" className="h-16 md:h-20" />
             <div className="text-lg md:text-2xl font-semibold text-orange-500 leading-tight font-playfair">
-              Sauhardh <span className="text-black">international</span> School
-              <span className="text-lg text-gray-700 font-playfair"><br />
-                Making Harinagar literate
+              Sauhardh <span className="text-black">International</span> School
+              <span className="block text-sm text-gray-700">
+                Making Harinagar Literate
               </span>
             </div>
           </div>
@@ -36,32 +40,39 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-6 lg:space-x-8 text-gray-800 font-semibold font-playfair items-center">
             {menuItems.map((item) => (
-              <li key={item.title} className="relative group">
-                <button
-                  onClick={() => setActive(item.title)}
-                  className={`cursor-pointer flex items-center gap-1 ${
-                    active === item.title
-                      ? 'text-blue-700 font-semibold'
-                      : 'hover:text-blue-700'
-                  }`}
-                >
-                  {item.title}
-                  {item.submenu.length > 0 && (
-                    <FaChevronDown className="text-xs mt-1" />
-                  )}
-                </button>
-
-                {item.submenu.length > 0 && (
-                  <ul className="absolute left-0 top-full mt-2 bg-white text-sm text-gray-800 shadow-md rounded-md z-50 min-w-[160px] hidden group-hover:block pointer-events-auto">
-                    {item.submenu.map((sub, index) => (
-                      <li
-                        key={index}
-                        className="px-4 py-2 hover:bg-purple-100 cursor-pointer whitespace-nowrap"
-                      >
-                        <a href="#">{sub}</a>
-                      </li>
-                    ))}
-                  </ul>
+              <li key={item.id} className="relative group">
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    className={`hover:text-blue-600 ${
+                      active === item.title ? 'text-blue-700' : ''
+                    }`}
+                    onClick={() => handleLinkClick(item.title)}
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  <div className="relative group">
+                    <span className="flex items-center cursor-pointer group-hover:text-blue-600">
+                      {item.title}
+                      <FaChevronDown className="ml-1 text-sm" />
+                    </span>
+                    <div className="absolute left-0 mt-2 w-44 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-20">
+                      <ul className="py-2">
+                        {item.submenu?.map((sub, index) => (
+                          <li key={index}>
+                            <a
+                              href={sub.link}
+                              className="block px-4 py-2 hover:bg-orange-100 whitespace-nowrap"
+                              onClick={() => handleLinkClick(sub.title)}
+                            >
+                              {sub.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 )}
               </li>
             ))}
@@ -72,37 +83,53 @@ const Navbar = () => {
         {menuOpen && (
           <ul className="md:hidden bg-purple-100 px-4 pb-4 space-y-2 text-gray-800 font-medium font-playfair">
             {menuItems.map((item) => (
-              <li key={item.title}>
+              <li key={item.id}>
                 <div
                   className="flex justify-between items-center cursor-pointer py-2"
                   onClick={() =>
                     setOpenSubmenu(openSubmenu === item.title ? null : item.title)
                   }
                 >
-                  <span
-                    className={`${
-                      active === item.title ? 'text-blue-700 font-semibold' : ''
-                    }`}
-                    onClick={() => setActive(item.title)}
-                  >
-                    {item.title}
-                  </span>
-                  {item.submenu.length > 0 && (
-                    <FaChevronDown
-                      className={`text-sm transition-transform ${
-                        openSubmenu === item.title ? 'rotate-180' : ''
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      className={`${
+                        active === item.title ? 'text-blue-700 font-semibold' : ''
                       }`}
-                    />
+                      onClick={() => handleLinkClick(item.title)}
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <>
+                      <span
+                        className={`${
+                          active === item.title ? 'text-blue-700 font-semibold' : ''
+                        }`}
+                      >
+                        {item.title}
+                      </span>
+                      {item.submenu?.length > 0 && (
+                        <FaChevronDown
+                          className={`text-sm transition-transform ${
+                            openSubmenu === item.title ? 'rotate-180' : ''
+                          }`}
+                        />
+                      )}
+                    </>
                   )}
                 </div>
-                {openSubmenu === item.title && item.submenu.length > 0 && (
+                {openSubmenu === item.title && item.submenu?.length > 0 && (
                   <ul className="ml-4 pl-4 border-l border-purple-300 space-y-1">
                     {item.submenu.map((sub, index) => (
-                      <li
-                        key={index}
-                        className="text-sm text-gray-700 hover:text-blue-700 cursor-pointer"
-                      >
-                        <a href="#">{sub}</a>
+                      <li key={index}>
+                        <a
+                          href={sub.link}
+                          className="text-sm text-gray-700 hover:text-blue-700 block"
+                          onClick={() => handleLinkClick(sub.title)}
+                        >
+                          {sub.title}
+                        </a>
                       </li>
                     ))}
                   </ul>
