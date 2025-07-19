@@ -46,11 +46,11 @@ const CoreValues = () => {
 
             <div className="mt-6">
               <button className="mt-4 border border-white text-white px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all">
-                Read More
+                ++
               </button>
             </div>
 
-            <div className="absolute right-4 bottom-4 text-6xl opacity-10">
+            <div className="absolute right-4 bottom-4 text-6xl opacity-10 animate-bounce">
               {card.icon}
             </div>
           </div>

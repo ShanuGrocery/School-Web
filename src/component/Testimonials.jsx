@@ -32,7 +32,7 @@ const Testimonials = () => {
   return (
     <section className="bg-purple-50 py-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-purple-600 mb-12">
+        <h2 className="text-4xl font-bold text-purple-600 mb-12 font-playfair">
           💬 What Parents Say
         </h2>
 
