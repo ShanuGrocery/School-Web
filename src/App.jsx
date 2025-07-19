@@ -1,51 +1,11 @@
 // src/App.js
-import React, { useEffect } from 'react';
-import Navbar from './component/Navbar';
-import Hero from './component/Hero';
-import AboutUs from './component/AboutUs';
-import Footer from './component/Footer';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import EducationalOffers from './component/EducationalOffers';
-import Principalmessage from './component/Principalmessage';
-import Testimonials from './component/Testimonials';
-import AcademicSections from './component/AcademicSections';
-import RecentActivities from './component/RecentActivities';
-import MeetOurToppers from './component/MeetOurToppers';
-import EnquiryForm from './component/EnquiryForm';
-import Events from './component/Events/Events';
-import SchoolFAQ from './component/SchoolFAQ';
-import Facilities from './component/Facilities';
-import CoreValues from './component/CoreValues';
-// import RecentActivities from './component/RecentActivities';
-
-
+import React from 'react';
+import Home from './pages/Home';
 
 function App() {
-  useEffect(() => {
-  AOS.init({
-    duration: 1000,
-    once: false,
-  });
-}, []);
   return (
     <div>
-      <Navbar />
-      <Hero />
-      <EducationalOffers/>
-      <AboutUs/>
-      <Principalmessage/>
-      {/* <RecentActivities/> */}
-      <Events/>
-      <Facilities/>
-      <CoreValues/>
-      <AcademicSections/>
-      <RecentActivities/>
-      <MeetOurToppers/>
-      <EnquiryForm/>
-      <Testimonials/>
-      <SchoolFAQ/>
-      <Footer/>
+      <Home />
     </div>
   );
 }
