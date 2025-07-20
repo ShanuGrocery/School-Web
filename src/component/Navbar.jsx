@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import schoolLogo from '../assets/newlogo1.png';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import menuItems from '../data/menuData';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [active, setActive] = useState('Home');
@@ -19,6 +20,7 @@ const Navbar = () => {
       <nav className="bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
+          <Link to={"/"}>
           <div className="flex items-center space-x-2">
             <img src={schoolLogo} alt="Logo" className="h-16 md:h-20" />
             <div className="text-lg md:text-2xl font-semibold text-orange-500 leading-tight font-playfair">
@@ -28,6 +30,7 @@ const Navbar = () => {
               </span>
             </div>
           </div>
+          </Link>
 
           {/* Hamburger Icon */}
           <div

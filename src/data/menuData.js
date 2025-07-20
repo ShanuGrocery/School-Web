@@ -32,7 +32,7 @@ const menuItems = [
     title: "Mandatory details",
     submenu: [
       { title: "Fee Structure", link: "/Fee/Mandatory Details" },
-      { title: "Teaching Staff", link: "/staff/Mandatory Details" },
+      // { title: "Teaching Staff", link: "/staff/Mandatory Details" },
       { title: "Text-Books", link: "/textbooks/Mandatory Details" },
       { title: "Curriculum", link: "/academics/curriculum" },
       { title: "Infrastructure", link: "/infrastrucure/Mandatory Details" },

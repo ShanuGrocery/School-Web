@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import bgImg from "../assets/bg3.jpeg";
 import bgImg2 from "../assets/bg4.jpeg";
 import bgImg3 from "../assets/bg7.jpeg";
+import { Link } from "react-router-dom";
 
 const images = [bgImg, bgImg2, bgImg3];
 const prompts = [
@@ -48,14 +49,15 @@ const Hero = () => {
             >
               {prompts[currentIndex]}
             </motion.p>
-          </AnimatePresence>
-
+          </AnimatePresence> <br />
+          <Link to={"/contact/Help"}>
           <a
             href="#"
             className="inline-block bg-purple-600 text-white text-sm sm:text-base px-5 py-2 sm:px-6 sm:py-2.5 rounded-md hover:bg-blue-700 transition hover:bg-green-600"
           >
             Enquire Now
           </a>
+          </Link>
         </div>
       </div>
     </section>

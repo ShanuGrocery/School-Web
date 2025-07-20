@@ -25,7 +25,7 @@ const EnquiryForm = () => {
     const { name, phone, email, message } = formData;
 
     const whatsappMessage = `Hello,%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email || 'N/A'}%0A*Message:* ${message}`;
-    const whatsappURL = `https://wa.me/919523464653?text=${whatsappMessage}`;
+    const whatsappURL = `https://wa.me/917739692245?text=${whatsappMessage}`;
 
     window.open(whatsappURL, "_blank");
   };
