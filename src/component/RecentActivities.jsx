@@ -7,13 +7,12 @@ import {
   FaGlobeAsia,
 } from "react-icons/fa";
 
-// Import one image used for all activities (replace others later)
-import image1 from "../assets/wha3.jpeg"
+import image1 from "../assets/wha3.jpeg";
 import scienceImg from "../assets/wha2.jpeg";
-import image2 from "../assets/sip.png"
+import image2 from "../assets/sip.png";
+
 const activities = [
   {
-    icon: <FaUsers />,
     title: "Tree Plantation",
     description:
       "Students planted saplings and took a pledge to protect our environment.",
@@ -22,7 +21,6 @@ const activities = [
     image: scienceImg,
   },
   {
-    icon: <FaAward />,
     title: "Annual Sports Day",
     description:
       "An energetic day filled with races, games, and a spirit of healthy competition.",
@@ -31,7 +29,6 @@ const activities = [
     image: image1,
   },
   {
-    icon: <FaMusic />,
     title: "Inter House Competition",
     description:
       "Houses battled it out in music, dance, and drama showcasing incredible talent.",
@@ -41,16 +38,16 @@ const activities = [
   },
 ];
 
-  // {
-  //   icon: <FaGlobeAsia />,
-  //   title: "World Environment Day",
-  //   description:
-  //     "Students participated in tree plantation drives and environmental awareness rallies.",
-  //   date: "2025-06-05",
-  //   color: "bg-green-500",
-  //   image: scienceImg,
-  // },
-
+// Function to return icon based on title keywords
+const getIconByTitle = (title) => {
+  const lower = title.toLowerCase();
+  if (lower.includes("tree") || lower.includes("plantation")) return <FaUsers />;
+  if (lower.includes("sport")) return <FaAward />;
+  if (lower.includes("music") || lower.includes("competition") || lower.includes("dance")) return <FaMusic />;
+  if (lower.includes("teacher") || lower.includes("workshop")) return <FaChalkboardTeacher />;
+  if (lower.includes("world") || lower.includes("environment")) return <FaGlobeAsia />;
+  return <FaAward />; // default icon
+};
 
 const formatDate = (dateStr) =>
   new Date(dateStr).toLocaleDateString("en-GB", {
@@ -81,11 +78,11 @@ const RecentActivities = () => {
                   className="w-full h-40 object-cover"
                 />
 
-                {/* Icon Positioned Over Image */}
+                {/* Dynamic Icon */}
                 <div
                   className={`w-14 h-14 flex items-center justify-center rounded-full text-white text-2xl shadow-lg absolute -bottom-7 left-6 ${activity.color} transition-transform duration-500 group-hover:[transform:rotate(360deg)]`}
                 >
-                  {activity.icon}
+                  {getIconByTitle(activity.title)}
                 </div>
               </div>
 

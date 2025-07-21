@@ -199,7 +199,7 @@ const Footer = () => {
       <p className="text-center text-sm mt-4 text-white animate-blink font-playfair">
          Powered by{" "}
         <a
-          href="https://webala.in"
+          href="https://portfolio-react-xi-mauve.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="font-semibold underline hover:text-purple-200 transition font-playfair"

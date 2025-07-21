@@ -61,7 +61,7 @@ const Facilities = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
         {facilities.map((facility, index) => (
           <div key={index} className="flex gap-4 items-start">
-            <div>{facility.icon}</div>
+            <div className="animate-bounce">{facility.icon}</div>
             <div>
               <h3 className="text-lg font-semibold mb-1 font-playfair">{facility.title.toUpperCase()}</h3>
               <p className="text-gray-600 text-sm font-playfair">{facility.desc}</p>
